@@ -14,7 +14,7 @@
     --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
   }
   #cs-contact {
-    font-family: "Roboto", "Arial", sans-serif;
+    font-family: "Goudy Old Style", "Roboto", "Arial", sans-serif;
     padding: var(--sectionPadding);
   }
   #cs-contact .cs-container {
