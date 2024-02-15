@@ -1,7 +1,7 @@
 ---
 title: My first blog - how to create a cool lamp
 description: Description of my first blog. This is text that is displayed in
-  base "Blog" page before user clicks in.
+  base "Blog" page before user clicks in. Make it captivating!
 author: Gay Thrush
 date: 2024-02-15T18:44:39.761Z
 tags:
