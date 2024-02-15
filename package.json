@@ -1,5 +1,5 @@
 {
-    "name": "starter-kit-v4",
+    "name": "thrush-designs",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -12,17 +12,9 @@
         "start": "del-cli ./public --force && npm-run-all --parallel watch:*",
         "build": "run-s build:*"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-SASS.git"
-    },
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-SASS/issues"
-    },
-    "homepage": "https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-SASS#readme",
     "dependencies": {
         "@11ty/eleventy": "^2.0.1",
         "@11ty/eleventy-navigation": "^0.3.5",

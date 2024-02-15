@@ -1,0 +1,106 @@
+#gallery {
+    p {
+        font-size: 1.1rem;
+        line-height: 1.6em;
+        margin: 25px auto;
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 80%;
+    }
+
+    #homeWorkGrid
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    #homeWorkGrid img,
+    .slideshowImg
+    {
+        height: auto;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        width: 100%;
+        display: block;
+        margin: auto;
+        object-fit: cover;
+    }
+
+    #homeWorkGrid > div
+    {
+    padding: 20px 0px;
+    }
+
+    #homeWorkGrid div.imageContainer
+    {
+        margin: 0 auto;
+        width: 400px;
+        padding: 15px;
+        border: 1px solid #d8d8d8;
+        cursor: pointer;
+    }
+
+    #homeWorkGrid div.label
+    {
+        font-size: 20px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    /* Tablet - 874px */
+    @media only screen and (max-width: 874px) {
+        #homeWorkGrid {
+            grid-template-columns: 1fr;
+        }
+
+        #homeWorkGrid div.imageContainer {
+            max-width: calc(95% - 15px);
+            height: auto;
+        }
+    }
+}
+
+#work-content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19.0625rem, 1fr));
+    /* 16px - 20px */
+    gap: clamp(1rem, 1.5vw, 1.25rem);
+    position: relative;
+    margin-top: 3rem;
+
+    .work-image {
+        /* 260px - 360px */
+        min-height: clamp(16.25rem, 60vw, 20rem);
+        border-radius: 1rem;
+        /* clips the image corners */
+        overflow: hidden;
+        display: block;
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            /* makes it act like a background image */
+            object-fit: cover;
+        }
+    }
+}
+
+.work-article {
+    max-width: 95% !important;
+}
+
+.work-description {
+    margin: 0 auto;
+}

@@ -28,7 +28,6 @@
         <meta name="theme-color" content="#ffffff">
 
         <!-- Preloads -->
-        <link rel="preload" as="image" href="/assets/svgs/logo-white.svg">
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
 
@@ -36,12 +35,16 @@
         {% if preloadImg != '' %}
             <link rel="preload" as="image" href="{{ preloadImg }}" />
         {% endif %}
+        {% if preloadImg2 != '' %}
+            <link rel="preload" as="image" href="{{ preloadImg2 }}" />
+        {% endif %}
 
         <!-- Sitewide Stylesheets and Scripts -->
         <link rel="stylesheet" href="/assets/css/root.css">
         <link rel="stylesheet" href="/assets/css/dark.css">
         <script defer src="/assets/js/nav.js"></script>
         <script defer src="/assets/js/dark.js"></script>
+        
 
         {% block head %}{% endblock %}
 
@@ -52,20 +55,7 @@
         Home page - House Painting Contractors | Painters and Co. | TestCity, WA
         About Page - About us | Painters and Co.
         -->
-        <title>
-            {% if page.url == '/'%}
-                {{ title }}
-                |
-                {{ client.name }}
-                |
-                {{ client.address.city }},
-                {{ client.address.state }}
-            {% else %}
-                {{ title }}
-                |
-                {{ client.name }}
-            {% endif %}
-        </title>
+        <title>{{ title }} | {{ client.name }}</title>
     </head>
     <body>
         <!--Screen reader skip main nav-->

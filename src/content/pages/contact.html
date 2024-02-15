@@ -1,7 +1,7 @@
 ---
 title: 'Contact'
 description: 'Meta description for the page'
-preloadImg: '/assets/images/cabinets2.jpg'
+preloadImg: '/assets/images/beads.jpg'
 permalink: 'contact/'
 ---
 
@@ -20,9 +20,9 @@ permalink: 'contact/'
     <section id="int-hero">
         <h1 id="home-h">Contact Us</h1>
         <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+            <source media="(max-width: 600px)" srcset="/assets/images/beads-m.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/beads.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/beads.jpg" alt="Glass bead pattern" loading="eager" width="2500" height="1667">
         </picture>
     </section>
 
@@ -32,12 +32,12 @@ permalink: 'contact/'
 
     <section id="cs-contact">
         <div class="cs-container">
-            <form id="cs-form" name="Contact Form" method="post">
+            <form id="cs-form" name="Contact Form" method="post" data-netlify="true">
                 <div class="cs-content">
                     <span class="cs-topper">Contact</span>
                     <h2 class="cs-title">Get in Touch</h2>
                     <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.
+                        Have an idea for an art project that we could collaborate on? Contact us using the form below to get the ball rolling.
                     </p>
                 </div>
                 <label>
@@ -69,19 +69,6 @@ permalink: 'contact/'
                 <!--Phone-->
                 <span class="cs-header">Phone</span>
                 <a class="cs-link" href="tel:{{client.phoneForTel}}">{{client.phoneFormatted}}</a>
-                <!--Address-->
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="{{client.address.mapLink}}">
-                    {{client.address.lineOne}},
-                    <br />
-                    {{client.address.lineTwo}},
-                    <br />
-                    <span class="cs-block">
-                        {{client.address.city}}
-                        {{client.address.state}}
-                        {{client.address.zip}}
-                    </span>
-                </a>
 
                 <!-- Background Image-->
                 <picture class="cs-bg-picture">

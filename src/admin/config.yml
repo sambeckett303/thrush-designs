@@ -6,8 +6,8 @@ local_backend: true
 # change url to a link to the image you want to use, no file paths, must be a URL
 logo_url: https://codestitch.app/frontend/images/logo.png
 
-media_folder: "src/assets/images/blog"
-public_folder: "/assets/images/blog"
+media_folder: "src/assets/images/uploads"
+public_folder: "/assets/images/uploads"
 
 collections:
   - name: "blog"
@@ -24,3 +24,12 @@ collections:
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Image Caption", name: "imageAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "work"
+    label: "Work"
+    folder: "src/content/work"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Gallery", name: "gallery", widget: "list", summary: '{{fields.image}}', field: { label: "Image", name: "image", widget: "image" } }

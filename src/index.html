@@ -1,7 +1,8 @@
 ---
-title: 'Pixel Perfect Websites'
-description: 'Meta description for the page'
-preloadImg: '/assets/images/landing.jpg'
+title: 'Thrush Designs'
+description: 'Discover the captivating world of Thrush Designs, a Seattle-based artist showcasing a diverse portfolio of stunning artwork. Explore enchanting photographs featuring unique creations in categories like Containers & Terrariums, Fine Art, and Garden Design & Coaching. Immerse yourself in a visual journey that celebrates creativity, nature, and the artistic spirit.'
+preloadImg: '/assets/images/slideshow1.jpg'
+preloadImg2: '/assets/images/slideshow2.jpg'
 permalink: '/'
 eleventyNavigation:
   key: Home
@@ -11,6 +12,9 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script src="/assets/js/tiled-slideshow.js"></script>
+    <script defer src="/assets/js/initVue.js"></script>
     <link rel="stylesheet" href="/assets/css/local.css" />
     <link rel="stylesheet" href="/assets/css/critical.css" />
 
@@ -34,316 +38,47 @@ eleventyNavigation:
 {% endblock %}
 
 {% block body %}
-
-    <!-- ============================================ -->
-    <!--                    Hero                      -->
-    <!-- ============================================ -->
-
     <section id="hero">
-        <div class="cs-container">
-            <div class="cs-flex-group">
-                <span class="cs-topper">mountain hiking society</span>
-                <h1 class="cs-title">Explore the World with Exciting People</h1>
-                <p class="cs-text">
-                    Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Nibh tortor id aliquet lectus proin nibh condimentum.
-                </p>
-                <a href="/about" class="cs-button-solid">Explore More</a>
-                <a href="/contact" class="cs-button-transparent">
-                    <img
-                    class="cs-img"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
-                    alt="play icon"
-                    width="17"
-                    height="17" />
-                    Get in Touch
-                </a>
-            </div>
-        </div>
-
-        <!-- Background Image -->
-        <picture class="cs-picture">
-            <source media="(max-width: 600px)" srcset="/assets/images/landing-m.webp">
-            <source media="(min-width: 601px)" srcset="/assets/images/landing.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/landing.jpg" alt="new home" width="2500" height="1667" loading="eager">
-        </picture>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                  Services                    -->
-    <!-- ============================================ -->
-
-    <section id="services" class="services">
-        <!-- Get Icons From flaticon.com -->
-        <div class="card">
-            <picture>
-                <img
-                aria-hidden="true"
-                decoding="async"
-                src="/assets/svgs/service1.svg"
-                alt="appliance"
-                width="48"
-                height="48" />
-            </picture>
-            <h2>Service 1</h2>
-            <p>Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.</p>
-        </div>
-        <div class="card">
-            <picture>
-                <img
-                aria-hidden="true"
-                decoding="async"
-                src="/assets/svgs/service2.svg"
-                alt="appliance"
-                width="48"
-                height="48" />
-            </picture>
-            <h2>Service 2</h2>
-            <p>Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.</p>
-        </div>
-        <div class="card">
-            <picture>
-                <img
-                aria-hidden="true"
-                decoding="async"
-                src="/assets/svgs/service3.svg"
-                alt="appliance"
-                width="48"
-                height="48" />
-            </picture>
-            <h2>Service 3</h2>
-            <p>Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.</p>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                 Side By Side                 -->
-    <!-- ============================================ -->
-
-    <section id="sbs">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
+        <div id="slideshowPreviewImg" class="slideshowOuterContainer">
+            <div class="slideshowInnerContainer">
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="/assets/images/slideshow1-m.webp" type="image/webp">
+                    <source media="(min-width: 601px)" srcset="/assets/images/slideshow1.webp" type="image/webp">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/slideshow1.jpg" alt="new home" width="2500" height="1667" loading="eager" class="slideshowImg">
                 </picture>
             </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Company Title</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <div class="cs-flex-group">
-                    <p class="cs-flex-p">
-                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
-                    </p>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img 
-                    class="cs-quote-icon"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
-                    alt="gavel"
-                    width="136"
-                    height="77" />
-                </div>
-                <a href="/about" class="cs-button-solid">More About Us</a>
-            </div>
         </div>
+        <div id="previewPlaceholderRegion"></div>
+        <tiled-slideshow :images="['{{preloadImg}}','{{preloadImg2}}']"></tiled-slideshow>
     </section>
-
-    <!-- ============================================ -->
-    <!--            Extra Content To Rank             -->
-    <!-- ============================================ -->
-
-    <section id="sbs-r">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="560">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="560">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">SEO Ranking</span>
-                <h2 class="cs-title">Talk about a main service keyword</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non tenetur, iure nihil ipsam qui atque commodi id voluptatem nesciunt, quis animi fuga cum doloribus! Eaque laboriosam, unde consectetur iure asperiores ullam. Consequuntur debitis a voluptatibus vitae optio autem explicabo quia neque est quas, in placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus modi laudantium voluptatibus rem libero error minus quia eligendi sapiente eos.
-                </p>
-                <a href="/blog" class="cs-button-solid">Read our Blog</a>
-            </div>
-        </div>
+    <section id="about">
+        <div style="text-align: center;">
+			<div class="logoBird"></div>
+			<h1>Earth without art is just "Eh"</h1>
+			<p style="margin: 30px 50px;">Here at Thrush Designs, we pride ourselves on making unique and creative artwork made by simple things. We make high quality custom glass terrariums and planters. We also provide custom gardening design and lighting to make your backyard come to life!</p>
+			<div>
+				<a class="greenLink" href="/work"><div style="margin-bottom: 20px;" class="thrushButton">SEE OUR WORK</div></a>
+			</div>
+		</div>
+		<div class="divideBar"></div>
+		<div id="homeWorkGrid">
+			{% if collections.work | length == 0 %}
+                <h1>No work found</h1>
+            {% else %}
+            {%- for work in collections.work | reverse -%}
+				<div>
+					<a href="{{work.url}}">
+                        <div class="imageContainer">
+						    <img src="{{work.data.gallery[0]}}">
+					    </div>
+                    </a>
+					<a class="greenLink" href="{{work.url}}">
+                        <div class="label">{{work.data.title}}</div>
+                    </a>
+				</div>
+			{%- endfor -%}
+            {% endif %}
+		</div>
     </section>
-
-    <!-- ============================================ -->
-    <!--                   Gallery                    -->
-    <!-- ============================================ -->
-
-    <section id="gallery">
-        <div class="cs-container">
-            <span class="cs-topper">Our Portfolio</span>
-            <h2 class="cs-title">Et orci volutpat, back up generator installations</h2>
-            <div class="cs-image-group">
-                <!-- Row 1-->
-                <div class="cs-row cs-row-1">
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                    <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port1-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port1.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port1.jpg" alt="new hallway" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port4-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port4.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port4.jpg" alt="new home construction" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port7-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port7.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port7.jpg" alt="building a new wall" loading="lazy" width="400" height="560">
-                    </picture>
-                </div>
-                <!-- Row 2 -->
-                <div class="cs-row cs-row-2">
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                    <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port2-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port2.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port2.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port5-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port5.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port5.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port8-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port8.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port8.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
-                    </picture>
-                </div>
-                <!-- Row 3 -->
-                <div class="cs-row cs-row-3">
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                    <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port3-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port3.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port3.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port6-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port6.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port6.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port9-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port9.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port9.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
-                    </picture>
-
-                </div>
-            </div>
-            <a href="/projects" class="cs-button-solid">View Full Gallery</a>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                   Reviews                    -->
-    <!-- ============================================ -->
-
-    <section id="reviews">
-        <div class="cs-container">
-            <span class="cs-topper">Our Reviews</span>
-            <h2 class="cs-title">Words From Our Customers</h2>
-            <p class="cs-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
-            </p>
-            <ul class="cs-card-group">
-                <!-- Review 1 -->
-                <li class="cs-item">
-                    <img
-                    class="cs-item-img"
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png"
-                    alt="profile picture"
-                    width="80"
-                    height="80" />
-                    <p class="cs-item-p">
-                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
-                    </p>
-                    <span class="cs-reviewer">
-                        Jon Doe
-                        <span class="cs-desc">Homeowner</span>
-                    </span>
-                    <img
-                    class="cs-item-stars"
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
-                    alt="stars"
-                    width="96"
-                    height="16" />
-                </li>
-                <!-- Review 2 -->
-                <li class="cs-item">
-                    <img
-                    class="cs-item-img"
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
-                    alt="profile picture"
-                    width="80"
-                    height="80" />
-                    <p class="cs-item-p">
-                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
-                    </p>
-                    <span class="cs-reviewer">
-                        Jane Doe
-                        <span class="cs-desc">Homeowner</span>
-                    </span>
-                    <img
-                    class="cs-item-stars"
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
-                    alt="stars"
-                    width="96"
-                    height="16" />
-                </li>
-            </ul>
-            <a aria-label="read more reviews" href="/reviews" class="cs-button-solid">Our Reviews</a>
-        </div>
-    </section>
-
     {% include 'components/cta.html' %}
 {% endblock %}

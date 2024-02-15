@@ -1,0 +1,67 @@
+---
+title: 'Work'
+description: 'Discover the captivating world of Thrush Designs, a Seattle-based artist showcasing a diverse portfolio of stunning artwork. Explore enchanting photographs featuring unique creations in categories like Containers & Terrariums, Fine Art, and Garden Design & Coaching. Immerse yourself in a visual journey that celebrates creativity, nature, and the artistic spirit.'
+preloadImg: '/assets/images/beads.jpg'
+permalink: 'work/'
+eleventyNavigation:
+    key: Work
+    order: 300
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/work.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Our Work</h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/images/beads-m.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/beads.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/beads.jpg" alt="Glass bead pattern" loading="eager" width="2500" height="1667">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                   Work Summary               -->
+    <!-- ============================================ -->
+
+    <section id="gallery">
+        <div class="cs-container">
+            <p class="cs-text">
+                Discover the captivating world of Thrush Designs, a Seattle-based artist showcasing a diverse portfolio
+                of stunning artwork. Explore enchanting photographs featuring unique creations in categories like
+                Containers & Terrariums, Fine Art, and Garden Design & Coaching. Select a category and immerse yourself
+                in a visual journey that celebrates creativity, nature, and the artistic spirit.
+            </p>
+            <div id="homeWorkGrid">
+                {% if collections.work | length == 0 %}
+                    <h1>No work found</h1>
+                {% else %}
+                {%- for work in collections.work | reverse -%}
+                    <div>
+                        <a href="{{work.url}}">
+                            <div class="imageContainer">
+                                <img src="{{work.data.gallery[0]}}">
+                            </div>
+                        </a>
+                        <a class="greenLink" href="{{work.url}}">
+                            <div class="label">{{work.data.title}}</div>
+                        </a>
+                    </div>
+                {%- endfor -%}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/cta.html' %}
+
+{% endblock %}

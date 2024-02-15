@@ -5,8 +5,8 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0em) {
   :root {
-    --primary: #ffba19;
-    --primaryLight: #ffd675;
+    --primary: #64c25f;
+    --primaryLight: #bcf6b9;
     --secondary: #001f3f;
     --secondaryLight: #001f3f;
     --headerColor: #1a1a1a;
@@ -22,26 +22,32 @@
   }
   .cs-topper {
     font-size: var(--topperFontSize);
-    font-weight: 700;
     line-height: 1.2em;
     text-transform: uppercase;
+    text-align: inherit;
     letter-spacing: 0.1em;
-    color: var(--secondary);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
     display: block;
   }
   .cs-title {
     font-size: var(--headerFontSize);
     font-weight: 900;
     line-height: 1.2em;
-    margin: 0 auto 1rem;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
     color: var(--headerColor);
     position: relative;
   }
   .cs-text {
     font-size: var(--bodyFontSize);
     line-height: 1.5em;
+    text-align: inherit;
     width: 100%;
-    margin: 0 auto;
+    max-width: 40.625rem;
+    margin: 0;
     color: var(--bodyTextColor);
   }
   .cs-button-solid {
@@ -52,7 +58,6 @@
     text-transform: uppercase;
     text-decoration: none;
     width: auto;
-    height: 3.125rem;
     padding: 0 1.875rem;
     color: #000;
     background-color: var(--primary);
@@ -131,6 +136,20 @@
     width: 92%;
     margin: auto;
     position: relative;
+  }
+  .greenLink {
+    transition: all 0.4s cubic-bezier(0.55, 0.085, 0, 0.99);
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    box-shadow: inset 0 -2px 0 0 rgb(186, 255, 186);
+    color: var(--primary);
+    overflow-wrap: break-word;
+  }
+  .greenLink:hover {
+    text-decoration: underline;
+    color: black;
+    box-shadow: inset 0 -2em 0 0 rgb(186, 255, 186);
+    text-decoration-color: var(--primary);
   }
   h1,
   h2,
@@ -230,11 +249,9 @@
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #dark-mode-toggle {
-    margin: 0;
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   #dark-mode-toggle:hover {
     cursor: pointer;
@@ -297,7 +314,7 @@
   }
   #cs-navigation .cs-logo {
     width: 40%;
-    max-width: 9.125rem;
+    max-width: 13rem;
     height: 100%;
     margin: 0 auto 0 0;
     /* prevents padding from affecting height and width */
@@ -481,7 +498,7 @@
   }
   body.dark-mode #cs-navigation .cs-logo {
     /* makes it white */
-    filter: grayscale(1) brightness(1000%);
+    filter: invert(1);
   }
   body.dark-mode #cs-navigation .cs-line {
     background-color: #fff;
@@ -692,32 +709,24 @@
     padding: 0 1rem;
     background-color: #fff;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    position: fixed;
-    z-index: 10000;
   }
   #cs-navigation .cs-container {
     width: 100%;
     max-width: 80rem;
     margin: auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1.5rem;
   }
   #cs-navigation .cs-toggle {
     display: none;
   }
   #cs-navigation .cs-logo {
-    width: 18.4%;
-    max-width: 21.875rem;
-    height: 4.0625rem;
-    /* margin-right auto pushes everything away from it to the right */
-    margin: 0 auto 0 0;
+    width: 35rem;
+    max-width: 35rem;
+    height: 5.5rem;
+    margin: auto;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
   }
   #cs-navigation .cs-logo img {
     width: 100%;
@@ -729,15 +738,15 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    padding-bottom: 7px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    /* 20px - 36px */
-    gap: clamp(1.25rem, 2.6vw, 2.25rem);
+    gap: clamp(3.25rem, 2.6vw, 4.25rem);
   }
   #cs-navigation .cs-li {
     list-style: none;
-    padding: 2rem 0;
+    padding: 1rem 0;
     /* prevent flexbox from squishing it */
     flex: none;
   }
@@ -751,24 +760,35 @@
     display: block;
     position: relative;
   }
-  #cs-navigation .cs-li-link:hover:before {
-    width: 100%;
+  #cs-navigation .cs-li-link:not(.cs-active):hover:before, #cs-navigation .cs-li-link:not(.cs-active):hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  #cs-navigation .cs-li-link.cs-active:before {
+  #cs-navigation .cs-li-link:before, #cs-navigation .cs-li-link:after {
+    content: "";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+    display: inline-block;
     width: 100%;
+    border-bottom: 1px solid;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
   }
   #cs-navigation .cs-li-link:before {
-    /* active state underline */
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: var(--primary);
+    margin-top: -2px;
+  }
+  #cs-navigation .cs-li-link:after {
+    margin-top: 21px;
+  }
+  #cs-navigation .cs-li-link.cs-active:after {
     opacity: 1;
-    display: block;
-    position: absolute;
-    bottom: 0rem;
-    left: 0;
-    transition: width 0.3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 /* Dark Mode */
@@ -778,13 +798,10 @@
   }
   body.dark-mode #cs-navigation .cs-logo {
     /* makes it turn white */
-    filter: grayscale(1) brightness(1000%);
+    filter: invert(1);
   }
   body.dark-mode #cs-navigation .cs-li-link {
     color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-navigation .cs-li-link:before {
-    background-color: var(--primaryLight);
   }
 }
 /*-- -------------------------- -->
@@ -999,109 +1016,33 @@
     padding: 5.25rem 0 1.25rem;
     background: #1c1c1c;
   }
-  #footer .left-section {
-    text-align: center;
-    margin: auto;
-    margin-bottom: 3.125rem;
+  #footer #footerLogo {
+    background: url(/assets/images/logoFull.png);
+    background-size: contain;
+    filter: invert(1);
+    width: 300px;
+    height: 55px;
   }
-  #footer .left-section .logo {
-    text-align: center;
-    width: auto;
-    height: 2em;
-    margin: auto;
-    margin-bottom: 1.875em;
-    display: inline-block;
+  #footer #divideBar {
+    background: #FFFFFF;
+    height: 2px;
+    width: 80%;
+    margin-top: 8px;
   }
-  #footer .left-section .logo img {
-    width: auto;
-    height: 100%;
-    display: block;
-  }
-  #footer .left-section p {
-    font-size: 0.875rem;
-    line-height: 1.9285714286rem;
-    text-align: center;
-    width: 100%;
-    width: 21.9285714286rem;
-    margin: auto;
-    color: #fff;
-    opacity: 0.9;
-  }
-  #footer .right-section {
-    width: 96%;
-    max-width: 25.4375rem;
-    margin: auto;
-  }
-  #footer .right-section .lists {
-    width: 96%;
-    max-width: 19.1875rem;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  #footer .right-section .lists ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-  }
-  #footer .right-section .lists ul:nth-of-type(3) {
-    margin-top: 3.125rem;
-  }
-  #footer .right-section .lists ul:nth-of-type(3) li {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  #footer .right-section .lists ul:nth-of-type(3) li:last-of-type {
-    margin-bottom: 0;
-  }
-  #footer .right-section .lists ul li {
-    font-size: 1.125rem;
-    list-style: none;
-    margin-bottom: 0.75rem;
-    color: #fff;
-    opacity: 0.9;
-  }
-  #footer .right-section .lists ul li a {
-    line-height: 1.1666666667em;
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s;
-  }
-  #footer .right-section .lists ul li a:hover {
-    color: var(--primary);
-  }
-  #footer .right-section .lists ul h2 {
-    font-size: 1.125rem;
-    font-weight: bold;
-    line-height: 1.1666666667em;
-    text-transform: uppercase;
-    margin-bottom: 2.3125rem;
-    color: #fff;
-    position: relative;
-  }
-  #footer .right-section .lists ul h2:before {
-    content: "";
-    width: 6.0625rem;
-    height: 0.125rem;
-    background: var(--primary);
-    opacity: 1;
-    display: block;
+  #footer #footerBird {
+    background: url(/assets/images/uploads/logoBird.png);
+    width: 150px;
+    height: 150px;
     position: absolute;
-    bottom: -1rem;
-    left: 0;
+    right: 20px;
+    top: -5px;
   }
-  #footer .right-section .buttons {
-    display: flex;
-    justify-content: center;
+  #footer #footerNav {
+    margin-top: 20px;
   }
-  #footer .right-section .cs-button-solid {
-    width: 15.625rem;
-    height: 3.3125rem;
-    margin: 0;
-    padding-top: 0.1875rem;
+  #footer #footerNav .footerMenuItem {
+    color: #FFFFFF;
+    margin: 13px 0px;
   }
   #footer .credit {
     font-size: 1rem;
@@ -1135,62 +1076,6 @@
     max-width: 82.5rem;
     margin: auto;
     padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
-  #footer .left-section {
-    text-align: left;
-    width: 25.5625rem;
-    margin: 0;
-  }
-  #footer .left-section .logo {
-    text-align: left;
-    height: 2.5rem;
-    margin-left: 0;
-  }
-  #footer .left-section p {
-    text-align: left;
-    margin-left: 0;
-  }
-  #footer .right-section {
-    width: 38.0625rem;
-    max-width: none;
-    margin: 0;
-  }
-  #footer .right-section .lists {
-    width: 96%;
-    max-width: 48.0625rem;
-    max-width: initial;
-    margin: 0;
-  }
-  #footer .right-section .lists ul:nth-of-type(3) {
-    margin-top: 0;
-  }
-  #footer .right-section .lists ul:nth-of-type(3) li:first-of-type {
-    margin-bottom: 0;
-  }
-  #footer .right-section .lists ul li a {
-    position: relative;
-  }
-  #footer .right-section .lists ul li a:before {
-    content: "";
-    width: 0%;
-    height: 0.125rem;
-    background: var(--primary);
-    opacity: 1;
-    display: block;
-    position: absolute;
-    bottom: -0.1875rem;
-    left: 0;
-    transition: width 0.3s;
-  }
-  #footer .right-section .lists ul li a:hover:before {
-    width: 100%;
-  }
-  #footer .right-section .buttons {
-    justify-content: flex-start;
   }
   #footer .credit .copyright {
     display: inline-block;
