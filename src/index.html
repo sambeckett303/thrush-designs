@@ -68,10 +68,10 @@ eleventyNavigation:
 				<div>
 					<a href="{{work.url}}">
                         <div class="imageContainer">
-						    <img src="{{work.data.gallery[0]}}">
+						    <img src="{{work.data.gallery[0]}}" alt="{{work.data.title}} section preview image">
 					    </div>
                     </a>
-					<a class="greenLink" href="{{work.url}}">
+					<a class="greenLink" href="{{work.url}}" aria-label="See and read more about {{work.data.title}}">
                         <div class="label">{{work.data.title}}</div>
                     </a>
 				</div>
