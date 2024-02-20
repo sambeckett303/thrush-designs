@@ -2,7 +2,7 @@ Vue.component('tiled-slideshow',
 {
 	props:
 	{
-        images: Array,
+		images: Array,
 		width:
 		{
 			type: String,
@@ -41,18 +41,19 @@ Vue.component('tiled-slideshow',
 	},
 	mounted: function()
 	{
-        var previewSpacePlaceholder = document.getElementById('previewPlaceholderRegion');
-        var previewImgPlaceholder = document.getElementById('slideshowPreviewImg');
-        previewSpacePlaceholder.style.display = 'none';
-        previewImgPlaceholder.style.display = 'none';
-        for (let i = 0; i < this.images.length; i++) {
-            let item = { active: false, src: this.images[i] };
-            if (i === 0) {
-                item.active = true;
-            }
-            this.pics.push(item);
-        }
-        setTimeout(this.doTransition, 1000)
+		var previewSpacePlaceholder = document.getElementById('previewPlaceholderRegion');
+		var previewImgPlaceholder = document.getElementById('slideshowPreviewImg');
+		previewSpacePlaceholder.style.display = 'none';
+		previewImgPlaceholder.style.display = 'none';
+		for (let i = 0; i < this.images.length; i++) {
+			let mobileSrc = this.images[i].replace(/\.[^/.]+$/, "-m.jpg");
+			let item = { active: false, src: this.images[i], mobileSrc };
+			if (i === 0) {
+				item.active = true;
+			}
+			this.pics.push(item);
+		}
+		setTimeout(this.doTransition, 1000)
 	},
 	computed:
 	{
@@ -122,7 +123,10 @@ Vue.component('tiled-slideshow',
 		+		'</transition-group>'
 		+		'<template v-for="pic in pics">'
 		+			'<transition name="fade">'
-		+				'<img v-if="pic.active" class="slideshowImg" :src="pic.src">'
+		+               '<picture v-if="pic.active">'
+		+                   '<source media="(max-width: 600px)" :srcset="pic.mobileSrc" type="image/jpg">'
+		+                   '<img aria-hidden="true" decoding="async" :src="pic.src"" alt="slideshow image" width="2500" height="1667" class="slideshowImg">'
+		+               '</picture>'
 		+			'</transition>'
 		+		'</template>'
 		+	'</div>'

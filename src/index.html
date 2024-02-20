@@ -12,8 +12,8 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
-    <script src="/assets/js/tiled-slideshow.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
+    <script defer src="/assets/js/tiled-slideshow.js"></script>
     <script defer src="/assets/js/initVue.js"></script>
     <link rel="stylesheet" href="/assets/css/local.css" />
     <link rel="stylesheet" href="/assets/css/critical.css" />
@@ -42,9 +42,8 @@ eleventyNavigation:
         <div id="slideshowPreviewImg" class="slideshowOuterContainer">
             <div class="slideshowInnerContainer">
                 <picture class="cs-picture">
-                    <source media="(max-width: 600px)" srcset="/assets/images/slideshow1-m.webp" type="image/webp">
-                    <source media="(min-width: 601px)" srcset="/assets/images/slideshow1.webp" type="image/webp">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/slideshow1.jpg" alt="new home" width="2500" height="1667" loading="eager" class="slideshowImg">
+                    <source media="(max-width: 600px)" srcset="/assets/images/slideshow1-jpg" type="image/webp">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/slideshow1.jpg" alt="placeholder slideshow image" width="2500" height="1667" loading="eager" class="slideshowImg">
                 </picture>
             </div>
         </div>
