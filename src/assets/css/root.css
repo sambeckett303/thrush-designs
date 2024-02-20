@@ -209,7 +209,7 @@
     position: absolute;
     top: 0.625rem;
     right: 4.375rem;
-    z-index: 1000;
+    z-index: 100;
     overflow: hidden;
   }
   #dark-mode-toggle img,
@@ -260,7 +260,7 @@
     background-color: #fff;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: fixed;
-    z-index: 10000;
+    z-index: 100;
   }
   #cs-navigation:before {
     /* black blurred overlay */

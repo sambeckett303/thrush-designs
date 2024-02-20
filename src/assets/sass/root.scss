@@ -252,7 +252,7 @@
         position: absolute;
         top: calc(10 / 16 * 1rem);
         right: calc(70 / 16 * 1rem);
-        z-index: 1000;
+        z-index: 100;
         overflow: hidden;
 
         img,
@@ -318,7 +318,7 @@
         background-color: #fff;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         position: fixed;
-        z-index: 10000;
+        z-index: 100;
 
         &:before {
             /* black blurred overlay */

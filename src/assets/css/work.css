@@ -91,4 +91,50 @@
   margin: 0 auto;
 }
 
+#fullImagePreviewBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.7;
+  z-index: 101;
+  display: none;
+}
+
+#fullImagePreviewBg.active {
+  display: block;
+}
+
+#fullImagePreview img {
+  width: auto !important;
+  max-width: 96%;
+  height: 85%;
+  max-height: 95%;
+  -o-object-fit: cover;
+  object-fit: contain;
+  position: fixed;
+  cursor: default !important;
+  z-index: 9998 !important;
+  -o-object-position: center;
+  object-position: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  z-index: 9999;
+  height: 50px;
+  width: 50px;
+  background: url(/assets/images/close.png);
+  background-size: contain;
+  position: fixed;
+  top: 50px;
+  right: 0;
+  cursor: pointer;
+  border: none;
+}
+
 /*# sourceMappingURL=work.css.map */

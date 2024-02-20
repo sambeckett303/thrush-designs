@@ -12,6 +12,7 @@ eleventyComputed:
 {% block head %}
     <link rel="stylesheet" href="/assets/css/work.css">
     <link rel="stylesheet" href="/assets/css/blog.css">
+    <script defer src="/assets/js/work.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -52,6 +53,8 @@ eleventyComputed:
                     {%- endfor -%}
                 </section>
             </article>
+            <div id="fullImagePreviewBg"></div>
+            <div id="fullImagePreview"></div>
         </div>
         <!-- End .main-content -->
 
