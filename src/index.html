@@ -1,8 +1,9 @@
 ---
 title: 'Thrush Designs'
 description: 'Discover the captivating world of Thrush Designs, a Seattle-based artist showcasing a diverse portfolio of stunning artwork. Explore enchanting photographs featuring unique creations in categories like Containers & Terrariums, Fine Art, and Garden Design & Coaching. Immerse yourself in a visual journey that celebrates creativity, nature, and the artistic spirit.'
-preloadImg: '/assets/images/slideshow1'
-preloadImg2: '/assets/images/slideshow2'
+preloadImg: ''
+preloadStdImg: '/assets/images/slideshow1'
+preloadStdImg2: '/assets/images/slideshow2'
 permalink: '/'
 eleventyNavigation:
   key: Home
@@ -43,12 +44,12 @@ eleventyNavigation:
             <div class="slideshowInnerContainer">
                 <picture class="cs-picture">
                     <source media="(max-width: 600px)" srcset="/assets/images/slideshow1-m.jpg" type="image/jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/slideshow1.jpg" alt="placeholder slideshow image" width="1000" height="600" loading="eager" class="slideshowImg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/slideshow1.jpg" alt="placeholder slideshow image" sizes="(max-width: 600px) 400px, 1000px" loading="eager" class="slideshowImg">
                 </picture>
             </div>
         </div>
         <div id="previewPlaceholderRegion"></div>
-        <tiled-slideshow :images="['{{preloadImg}}','{{preloadImg2}}']"></tiled-slideshow>
+        <tiled-slideshow :images="['{{preloadStdImg}}','{{preloadStdImg2}}']"></tiled-slideshow>
     </section>
     <section id="about">
         <div style="text-align: center;">

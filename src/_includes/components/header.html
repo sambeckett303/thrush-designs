@@ -6,7 +6,10 @@
   <div class="cs-container">
     <!--Nav Logo-->
     <a href="/" class="cs-logo" aria-label="back to home">
-      <img src="/assets/images/logoFull.png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+      <picture class="cs-picture">
+        <source media="(max-width: 600px)" srcset="/assets/images/logoFull-m.png" type="image/png">
+        <img aria-hidden="true" decoding="async" src="/assets/images/logoFull.png" alt="logo" width="210" height="29" loading="eager">
+      </picture>
     </a>
     <!--Navigation List-->
     <nav class="cs-nav" role="navigation">
