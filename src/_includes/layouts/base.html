@@ -29,13 +29,13 @@
 
         <!-- Preloads -->
         <link rel="preload" as="font" type="font/ttf" href="/assets/fonts/Goudy-Old-Style-Regular.ttf" crossorigin>
-
+        <link rel="preload" as="image" href="/assets/images/logoFull.png" imagesrcset="/assets/images/logoFull-m.png 200w, /assets/images/logoFull.png 600w" sizes="(max-width: 63.9375rem) 200px, 600px"/>
         <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
         {% if preloadImg != '' %}
-            <link rel="preload" as="image" href="{{ preloadImg }}.jpg" imagesrcset="{{preloadImg}}-m.jpg 400w, {{preloadImg}}.jpg 1000w" sizes="(max-width: 600px) 480px, 1000px"/>
+            <link rel="preload" as="image" href="{{ preloadImg }}.jpg" imagesrcset="{{preloadImg}}-m.jpg 400w, {{preloadImg}}.jpg 1000w" sizes="100vw"/>
         {% endif %}
         {% if preloadImg2 != '' %}
-            <link rel="preload" as="image" href="{{ preloadImg2 }}.jpg" imagesrcset="{{preloadImg2}}-m.jpg 400w, {{preloadImg2}}.jpg 1000w" sizes="(max-width: 600px) 480px, 1000px"/>
+            <link rel="preload" as="image" href="{{ preloadImg2 }}.jpg" imagesrcset="{{preloadImg2}}-m.jpg 400w, {{preloadImg2}}.jpg 1000w" sizes="100vw"/>
         {% endif %}
 
         <!-- Sitewide Stylesheets and Scripts -->

@@ -123,7 +123,7 @@ Vue.component('tiled-slideshow',
 		+		'</transition-group>'
 		+		'<template v-for="pic in pics">'
 		+			'<transition name="fade">'
-		+               '<img v-if="pic.active" aria-hidden="true" decoding="async" :src="pic.src" :srcset="pic.srcset" sizes="(max-width: 600px) 400px, 1000px" alt="slideshow image" width="2500" height="1667" class="slideshowImg">'
+		+               '<img v-if="pic.active" aria-hidden="true" decoding="async" :src="pic.src" :srcset="pic.srcset" sizes="100vw" alt="slideshow image" width="1000" height="600" class="slideshowImg">'
 		+			'</transition>'
 		+		'</template>'
 		+	'</div>'
