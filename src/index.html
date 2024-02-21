@@ -1,8 +1,8 @@
 ---
 title: 'Thrush Designs'
 description: 'Discover the captivating world of Thrush Designs, a Seattle-based artist showcasing a diverse portfolio of stunning artwork. Explore enchanting photographs featuring unique creations in categories like Containers & Terrariums, Fine Art, and Garden Design & Coaching. Immerse yourself in a visual journey that celebrates creativity, nature, and the artistic spirit.'
-preloadImg: '/assets/images/slideshow1.jpg'
-preloadImg2: '/assets/images/slideshow2.jpg'
+preloadImg: '/assets/images/slideshow1'
+preloadImg2: '/assets/images/slideshow2'
 permalink: '/'
 eleventyNavigation:
   key: Home
@@ -42,7 +42,7 @@ eleventyNavigation:
         <div id="slideshowPreviewImg" class="slideshowOuterContainer">
             <div class="slideshowInnerContainer">
                 <picture class="cs-picture">
-                    <source media="(max-width: 600px)" srcset="/assets/images/slideshow1-jpg" type="image/webp">
+                    <source media="(max-width: 600px)" srcset="/assets/images/slideshow1-m.jpg" type="image/jpg">
                     <img aria-hidden="true" decoding="async" src="/assets/images/slideshow1.jpg" alt="placeholder slideshow image" width="2500" height="1667" loading="eager" class="slideshowImg">
                 </picture>
             </div>
@@ -68,7 +68,7 @@ eleventyNavigation:
 				<div>
 					<a href="{{work.url}}">
                         <div class="imageContainer">
-						    <img src="{{work.data.gallery[0]}}" alt="{{work.data.title}} section preview image">
+						    <img src="{{work.data.gallery[0]}}" alt="{{work.data.title}} section preview image" width="400" height="200">
 					    </div>
                     </a>
 					<a class="greenLink" href="{{work.url}}" aria-label="See and read more about {{work.data.title}}">

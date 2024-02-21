@@ -32,10 +32,10 @@
 
         <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
         {% if preloadImg != '' %}
-            <link rel="preload" as="image" href="{{ preloadImg }}" />
+            <link rel="preload" as="image" href="{{ preloadImg }}.jpg" imagesrcset="{{preloadImg}}-m.jpg 400w, {{preloadImg}}.jpg 1000w" sizes="(max-width: 600px) 480px, 1000px"/>
         {% endif %}
         {% if preloadImg2 != '' %}
-            <link rel="preload" as="image" href="{{ preloadImg2 }}" />
+            <link rel="preload" as="image" href="{{ preloadImg2 }}.jpg" imagesrcset="{{preloadImg2}}-m.jpg 400w, {{preloadImg2}}.jpg 1000w" sizes="(max-width: 600px) 480px, 1000px"/>
         {% endif %}
 
         <!-- Sitewide Stylesheets and Scripts -->
