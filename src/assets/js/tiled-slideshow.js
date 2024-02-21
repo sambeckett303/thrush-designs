@@ -47,7 +47,7 @@ Vue.component('tiled-slideshow',
 		previewImgPlaceholder.style.display = 'none';
 		for (let i = 0; i < this.images.length; i++) {
 			let mobileSrc = this.images[i] +  "-m.jpg";
-			let item = { active: false, src: this.images[i] + ".jpg", srcset };
+			let item = { active: false, src: this.images[i] + ".jpg", mobileSrc };
 			if (i === 0) {
 				item.active = true;
 			}
