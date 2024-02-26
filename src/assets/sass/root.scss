@@ -8,7 +8,6 @@
 @media only screen and (min-width: 0em) {
     // Website colors
     :root {
-        --doc-height: 100%;
         --primary: #4c9148;
         --primaryLight: #98d395;
         --secondary: #001f3f;
@@ -1192,6 +1191,7 @@
             filter: invert(1);
             width: 300px;
             height: 55px;
+            margin-bottom: 50px;
         }
 
         #divideBar {
@@ -1207,7 +1207,7 @@
             height: 150px;
             position: absolute;
             right: 20px;
-            top: -5px;
+            top: 25px;
         }
         #footerNav {
             margin-top: 20px;
@@ -1215,6 +1215,10 @@
             .footerMenuItem {
                 color: #FFFFFF;
                 margin: 13px 0px;
+            }
+
+            a {
+                text-decoration: none;
             }
         }
         

@@ -1,10 +1,3 @@
-const documentHeight = () => {
-	const doc = document.documentElement
-	doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
-}
-window.addEventListener('resize', documentHeight);
-documentHeight();
-
 Vue.component('tiled-slideshow',
 {
 	props:
@@ -123,7 +116,7 @@ Vue.component('tiled-slideshow',
 		}
 	},
 	template:
-		'<div class="slideshowOuterContainer" :style="{ width: width }">'
+		'<div class="slideshowOuterContainer" :style="{ width: width, height: height }">'
 		+	'<div class="slideshowInnerContainer">'
 		+		'<transition-group name="slideshow">'
 		+			'<div :key="panel.id" v-for="(panel, index) in transitionPanels" v-if="panel.inTransition" class="transitionPanel" :style="{ height: getTransitionPanelHeight(), \'margin-top\': getTransitionPanelTop(index) }"></div>'

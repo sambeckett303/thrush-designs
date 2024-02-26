@@ -55,7 +55,7 @@
     grid-template-columns: 1fr;
   }
   #about #homeWorkGrid div.imageContainer {
-    max-width: calc(95% - 15px);
+    width: calc(95% - 15px);
     height: auto;
   }
 }
