@@ -72,6 +72,7 @@
 
 #previewPlaceholderRegion {
     height: calc(100vh - 242px);
+    height: calc(var(--doc-height) - 242px);
     width: 100%;
 }
 
@@ -91,6 +92,7 @@ body.dark-mode .transitionPanel {
     position: relative;
     margin: 0px auto;
     height: calc(100vh - 242px);
+    height: calc(var(--doc-height) - 242px);
 }
 
 .slideshowInnerContainer

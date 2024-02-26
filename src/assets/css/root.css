@@ -5,6 +5,7 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0em) {
   :root {
+    --doc-height: 100%;
     --primary: #4c9148;
     --primaryLight: #98d395;
     --secondary: #001f3f;
