@@ -1,7 +1,5 @@
 #gallery {
     p {
-        font-size: 1.1rem;
-        line-height: 1.6em;
         margin: 25px auto;
         margin-bottom: 1rem;
         text-align: center;
@@ -84,6 +82,7 @@
         overflow: hidden;
         display: block;
         position: relative;
+        cursor: pointer;
 
         img {
             position: absolute;
