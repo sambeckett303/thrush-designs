@@ -7,15 +7,15 @@ exports.handler = async (event) => {
 
     // Create the email content
     const msg = {
-        to: 'sambeckett303@gmail.com',
+        to: 'gaythrush@hotmail.com',
         from: 'donotreply@thrushdesigns.art',
         subject: 'New Website Contact Request',
         text:
-        `Name: ${formData.get('name')}
-        Email: ${formData.get('email')}
-        Phone: ${formData.get('phone')}
-        How did they find you? ${formData.get('find')}
-        Message: ${formData.get('message')}`
+`Name: ${formData.get('name')}
+Email: ${formData.get('email')}
+Phone: ${formData.get('phone')}
+How did they find you? ${formData.get('find')}
+Message: ${formData.get('message')}`
     };
 
     try {
