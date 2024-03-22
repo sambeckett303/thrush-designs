@@ -10,9 +10,9 @@ exports.handler = async (event) => {
 
     // Create the email content
     const msg = {
-        to: 'sambeckett303@gmail.com',
+        to: 'gaythrush@hotmail.com',
         from: 'donotreply@thrushdesigns.art',
-        subject: 'New Contact Form Submission',
+        subject: 'New Website Contact Request',
         text:
         `Name: ${formData.name}
         Email: ${formData.email}
