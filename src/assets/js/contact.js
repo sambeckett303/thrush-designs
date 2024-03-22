@@ -9,7 +9,8 @@ document.getElementById('cs-form').addEventListener('submit', function(event) {
 
     fetch('/.netlify/functions/contact-submitted', {
         method: 'POST',
-        body: formData
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
     })
     .then(response => {
       if (response.ok) {
