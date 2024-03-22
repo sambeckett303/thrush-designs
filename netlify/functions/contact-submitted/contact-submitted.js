@@ -1,41 +1,43 @@
 const sgMail = require('@sendgrid/mail');
+const formidable = require('formidable');
 
 exports.handler = async (event) => {
-    // Set your SendGrid API key
-    console.log('Inside handler function!');
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const form = new formidable.IncomingForm();
 
-    // Parse the form data
-    const formData = JSON.parse(event.body);
-
-    // Create the email content
-    const msg = {
-        to: 'gaythrush@hotmail.com',
-        from: 'donotreply@thrushdesigns.art',
-        subject: 'New Website Contact Request',
-        text:
-        `Name: ${formData.name}
-        Email: ${formData.email}
-        Phone: ${formData.phone}
-        How did they find you? ${formData.find}
-        Message: ${formData.message}`
-    };
-
-    try {
-        // Send the email
-        await sgMail.send(msg);
-        return {
-            statusCode: 200,
-            body: 'Email sent successfully!',
-        };
-    } catch (error) {
-        console.error(error);
-        if (error.response) {
-            console.error(error.response.body)
+    return new Promise((resolve, reject) => {
+      form.parse(event, (err, fields, files) => {
+        if (err) {
+          return reject({ statusCode: 500, body: 'Form parsing error' });
         }
-        return {
-            statusCode: error.code,
-            body: JSON.stringify({msg: error.message}),
+        const msg = {
+            to: 'sambeckett303@gmail.com',
+            from: 'donotreply@thrushdesigns.art',
+            subject: 'New Website Contact Request',
+            text:
+            `Name: ${fields.name}
+            Email: ${fields.email}
+            Phone: ${fields.phone}
+            How did they find you? ${fields.find}
+            Message: ${fields.message}`
         };
-    }
+        sgMail.send(msg)
+          .then(() => {
+            resolve({
+              statusCode: 200,
+              body: 'Email sent successfully!',
+            });
+          })
+          .catch((err) => {
+            console.error(error);
+            if (error.response) {
+              console.error(error.response.body)
+            }
+            reject({
+                statusCode: error.code,
+                body: JSON.stringify({msg: error.message}),
+            });
+          });
+      });
+    });
 };

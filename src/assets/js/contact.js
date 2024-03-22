@@ -6,13 +6,10 @@ document.getElementById('cs-form').addEventListener('submit', function(event) {
     // Show loading message
     document.getElementById('fadeBg').style.display = 'block';
     document.getElementById('loading').style.display = 'block';
-  
+
     fetch('/.netlify/functions/contact-submitted', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+        body: formData
     })
     .then(response => {
       if (response.ok) {
