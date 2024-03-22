@@ -17,7 +17,7 @@ exports.handler = async (event) => {
         `Name: ${formData.name}
         Email: ${formData.email}
         Phone: ${formData.phone}
-        How did they find you? ${formData.find-us}
+        How did they find you? ${formData.find}
         Message: ${formData.message}`
     };
 
